@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Create Product Search Engine</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="container">
+
+        <form>
+            <i class="fa fa-search"></i>
+            <input type="text" id="search-item" placeholder="Search Produts" onkeypress="search()">
+
+
+
+        </form>
+
+        <div class="product-list" id="product-item">
+            <div class="product">
+                <img src="images/1.jpg" alt="">
+                <div class="title item">
+                    <h2>Tshirt for Everyone</h2>
+                    <h3>$25</h3>
+                </div>
+            </div>
+            <div class="product">
+                <img src="images/2.jpg" alt="">
+                <div class="title item">
+                    <h2>Tranya Smart Watch</h2>
+                    <h3>$50</h3>
+                </div>
+            </div>
+            <div class="product">
+                <img src="images/3.jpg" alt="">
+                <div class="title item">
+                    <h2>Puma Roma Bag</h2>
+                    <h3>$100</h3>
+                </div>
+            </div>
+            <div class="product">
+                <img src="images/4.jpg" alt="">
+                <div class="title item">
+                    <h2>Hoodie For Everybody</h2>
+                    <h3>$50</h3>
+                </div>
+            </div>
+            <div class="product">
+                <img src="images/5.jpg" alt="">
+                <div class="title item">
+                    <h2>Grand court Sneaker</h2>
+                    <h3>$35</h3>
+                </div>
+            </div>
+            <div class="product">
+                <img src="images/6.jpg" alt="">
+                <div class="title item">
+                    <h2>Fanta Fashion Hoodie</h2>
+                    <h3>$65</h3>
+                </div>
+            </div>
+            <div class="product">
+                <img src="images/7.jpg" alt="">
+                <div class="title item">
+                    <h2>Bag for RoadTrip</h2>
+                    <h3>$50</h3>
+                </div>
+            </div>
+            <div class="product">
+                <img src="images/8.jpg" alt="">
+                <div class="title item">
+                    <h2>Gilden Men's Tshirt</h2>
+                    <h3>$65</h3>
+                </div>
+            </div>
+            <div class="product">
+                <img src="images/9.jpg" alt="">
+                <div class="title item">
+                    <h2>Trayna Smart Watch</h2>
+                    <h3>$75</h3>
+                </div>
+            </div>
+            <div class="product">
+                <img src="images/10.jpg" alt="">
+                <div class="title item">
+                    <h2>Trayna Tshirt</h2>
+                    <h3>$70</h3>
+                </div>
+            </div>
+            <div class="product">
+                <img src="images/11.jpg" alt="">
+                <div class="title item">
+                    <h2>Fashionable Bags</h2>
+                    <h3>$75</h3>
+                </div>
+            </div>
+            <div class="product">
+                <img src="images/12.jpg" alt="">
+                <div class="title item">
+                    <h2>Hoodie Fashion</h2>
+                    <h3>$115</h3>
+                </div>
+            </div>
+            <div class="product">
+                <img src="images/13.jpg" alt="">
+                <div class="title item">
+                    <h2>Adidas Sneaker</h2>
+                    <h3>$75</h3>
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+    </div>
+
+
+
+
+
+
+    <script>
+        const search = () => {
+
+            const input = document.getElementById("search-item").value.toUpperCase();
+            const productlist = document.getElementById("product-item");
+            const product = document.querySelectorAll(".product");
+            const pname = document.getElementsByTagName("h2");
+
+
+            for (var i = 0; i < pname.length; i++) {
+
+                let match = product[i].getElementsByClassName('item')[0];
+                if (match) {
+                    let textvalue = match.textContent || match.innerHTML
+
+                    if (textvalue.toUpperCase().indexOf(input) > -1) {
+                        product[i].style.display = "";
+                    } else {
+                        product[i].style.display = "none";
+                    }
+                }
+
+
+
+            }
+        }
+    </script>
+</body>
+
+</html>
